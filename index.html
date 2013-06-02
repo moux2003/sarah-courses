@@ -1,0 +1,63 @@
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("#plugin-menu .plugin-nav a").click(function () {
+            jQuery("#plugin-menu .content > ul").hide();
+            jQuery("#plugin-menu .plugin-nav ul li").removeClass("active");
+            jQuery(this).parent().addClass("active");
+            jQuery("#" + jQuery(this).data("toggle")).show();
+            return false;
+        });
+    });
+</script>
+<p class="page-header">
+    <span class="lead">Ce module permet de contrôler le volume système via S.A.R.A.H</span><br/>
+    Le plugin est basé sur l'outil en ligne de commande <em>NirCmd</em>.
+</p>
+
+<div id="plugin-menu" class="row-fluid">
+    <!--Navigation-->
+    <div class="span3 well plugin-nav">
+        <ul class="nav nav-list">
+            <li class="nav-header">Configuration</li>
+            <li class="active"><a href="" data-toggle="plugin-config-sarah">SARAH</a></li>
+            <li class="nav-header">Commandes vocales</li>
+            <li><a href="#" data-toggle="plugin-vox-examples">Exemples</a></li>
+            <li><a href="#" data-toggle="plugin-vox-restrict">Restrictions</a></li>
+            <li class="divider"></li>
+            <li><a href="#" data-toggle="plugin-changelog">CHANGELOG</a></li>
+        </ul>
+    </div>
+    <!--Content-->
+    <div class="span9 content">
+        <!--Config SARAH-->
+        <ul class="unstyled" id="plugin-config-sarah">
+            <li><i class="icon-play-circle"></i> Vous devez spécifier dans le fichier <em>volume.prop</em> la version
+                de Windows que vous utilisez : <strong>32</strong> ou <strong>64</strong> (bits).
+                <ul>
+                    <li>Exemple: <code>"os_version" : "32"</code></li>
+                </ul>
+            </li>
+        </ul>
+        <!--Exemples-->
+        <ul class="unstyled" id="plugin-vox-examples" style="display: none;">
+            <li><i class="icon-play-circle"></i> Sarah coupe le son</li>
+            <li><i class="icon-play-circle"></i> Sarah remet le son</li>
+            <li><i class="icon-play-circle"></i> Sarah monte le volume</li>
+            <li><i class="icon-play-circle"></i> Sarah baisse le volume</li>
+            <li><i class="icon-play-circle"></i> Sarah met le volume a 50 %
+                (<span class="text-error">"pour cent" étant optionnel</span>)
+            </li>
+        </ul>
+        <!--Restrictions-->
+        <ul class="unstyled" id="plugin-vox-restrict" style="display: none;">
+            <li><i class="icon-play-circle"></i> Le réglage du son à un niveau précis ne supporte, pour l'instant, que
+                les paliers de 10 allant de 0 à 100.
+            </li>
+        </ul>
+        <!--CHANGELOG-->
+        <ul class="unstyled" id="plugin-changelog" style="display: none;">
+            <li><i class="icon-play-circle"></i> <strong>1.1</strong> : Ajout du réglage du son à un niveau donné</li>
+            <li><i class="icon-play-circle"></i> <strong>1.0</strong> : Création du plugin</li>
+        </ul>
+    </div>
+</div>

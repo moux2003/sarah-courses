@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="doc">
+<head>
+    <title>Doc</title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module('doc', []).config(function ($routeProvider, $locationProvider) {
+            $routeProvider.when('/readme.html', {controller: DocCtrl, templateUrl: 'index.html'});
+            $locationProvider.html5Mode(true);
+        });
+        function DocCtrl() {
+        }
+    </script>
+</head>
+<body>
+<div id="container" class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3" id="sidebar">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    <li class="nav-header">S.A.R.A.H.</li>
+                    <li><a href="/home#about">A propos</a></li>
+                    <li><a href="/home#agent">Agent</a></li>
+                    <li><a href="/home#http">Serveur HTTP</a></li>
+                    <li class="nav-header">Modules</li>
+                    <li><a href="/home#plugin1">plugin1</a></li>
+                    <li><a href="/home#plugin2">plugin2</a></li>
+                    <li><a href="/home#...">...</a></li>
+                    <li class="nav-header">PhantomJS</li>
+                    <li class="nav-header">CRON</li>
+                </ul>
+            </div>
+        </div>
+        <!--/span-->
+        <div class="span9 page table-bordered" style="margin-top: 45px; border-color: red;" ng-view>
+        </div>
+        <!--/span-->
+    </div>
+    <!--/row-->
+</div>
+</body>
+</html>
