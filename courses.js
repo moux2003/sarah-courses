@@ -60,9 +60,6 @@ var save = function(directory, objects){
   var file = directory + '/../plugins/courses/data.xml';
   var xml  = fs.readFileSync(file,'utf8');
   var replace  = '§ -->\n';
-      replace += '<rule id="ruleCourseItemName">\n';
-      replace += '  <tag>out.action=new Object();</tag>\n';
-      replace += '  <one-of>\n';
       
   for(var i = 0 ; i < objects.length ; i++){
 	for(var j = 0 ; j < objects[i].length ; j++){
@@ -72,8 +69,6 @@ var save = function(directory, objects){
 	  }
 	}
   }
-      replace += '  </one-of>\n';
-      replace += '</rule>\n';
       replace += '<!-- §';
   
   var regexp = new RegExp('§[^§]+§','gm');
