@@ -4,7 +4,7 @@ sarah-courses
 Shopping list plugin for project S.A.R.A.H by J.P. Encausse
 
 AUTHOR :
-* Guigui Abloc
+* Maxime Hermouet
 
 NodeJS
 ------

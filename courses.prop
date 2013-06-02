@@ -1,0 +1,8 @@
+{
+  "modules" : { 
+    "courses"  : {
+      "description": "Constituer une liste de courses",
+      "version"    : "1.0"
+    }
+  }
+}

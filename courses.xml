@@ -1,0 +1,31 @@
+<grammar version="1.0" xml:lang="fr-FR" mode="voice"  root="ruleShop" xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics/1.0">
+
+  <rule id="ruleShop">
+    <tag>out.action=new Object();</tag>
+	<tag>out.action._attributes.context = "coursesList.xml"</tag>
+    <item weight="2">Sarah</item>
+	<one-of>
+		<item>construit la liste<tag>out.action.method = "init";</tag></item>
+		<item><ruleref uri="#ruleAdd"/><tag>out.action = rules.ruleAdd;</tag></item>
+    </one-of>
+    <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/courses";</tag>
+  </rule>
+  
+  <rule id="ruleAdd">
+	<tag>out.action.method = "add";</tag>
+	<one-of>
+		<item>ajoute a ma liste</item>
+		<item>il faut rachter</item>
+	</one-of>
+	<item repeat="0-1">
+		<one-of>
+			<item>du</item>
+			<item>des</item>
+			<item>une</item>
+			<item>un</item>
+			<item>de la</item>
+		</one-of>
+	</item>
+	<item><ruleref uri="#lazyruleCourseItemName"/><tag>out.action = rules.lazyruleCourseItemName;</tag></item>
+  </rule>
+</grammar>
